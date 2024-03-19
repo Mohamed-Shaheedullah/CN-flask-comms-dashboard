@@ -1,16 +1,29 @@
 
 
 body {
-    background-color: aqua;
+    background-color:steelblue;
 }
 
 nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: violet;
+    background-color:slategray;
+    text-decoration:dashed;
+}
+
+nav :hover{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: chocolate;
 }
 
 h1 {
-    text-align: center;
+    display: flex;
+    text-align:left;
+}
+h2 {
+    display: flex;
+    text-align: right;
 }

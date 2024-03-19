@@ -7,7 +7,7 @@ feature = Blueprint("feature", __name__)
 @feature.route("/")
 def home():
     overview_list = Overview.query.all()    # returns list of objects
-    print(overview_list)
+    # print(overview_list)
     er_message = request.args.get("er_message", None)
     return render_template("home.html", overview_list = overview_list, er_message=er_message)
 
@@ -32,3 +32,45 @@ def add():
 #     print(overview_list)
 #     er_message = request.args.get("er_message", None)
 #     return render_template("home.html", overview_list = overview_list, er_message=er_message)
+    
+@feature.route("/mon")
+def mon():
+    # overview = Overview.query.all()
+    # print(overview)
+    return render_template("mon.html")
+
+@feature.route("/tues")
+def tues():
+    # overview = Overview.query.all()
+    # print(overview)
+    return render_template("tues.html")
+
+@feature.route("/wed")
+def wed():
+    # overview = Overview.query.all()
+    # print(overview)
+    return render_template("wed.html")
+
+@feature.route("/thurs")
+def thurs():
+    # overview = Overview.query.all()
+    # print(overview)
+    return render_template("thurs.html")
+
+@feature.route("/fri")
+def fri():
+    # overview = Overview.query.all()
+    # print(overview)
+    return render_template("fri.html")
+
+@feature.route("/sat")
+def sat():
+    # overview = Overview.query.all()
+    # print(overview)
+    return render_template("sat.html")
+
+@feature.route("/sun")
+def sun():
+    # overview = Overview.query.all()
+    # print(overview)
+    return render_template("sun.html")

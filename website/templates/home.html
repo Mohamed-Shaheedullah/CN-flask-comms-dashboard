@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home.css') }}">
-    
-</head>
-<h1>Weekly overview</h1>
+{% extends 'base.html' %}
+
+<header id="input-data">
+</header>
+
 <body>
-    <nav>
-        <a href="home.html">Week overview</a>
-        <a href="">Monday</a>
-        <a href="">Tuesday</a>
-        <a href="">Wednesday</a>
-        <a href="">Thursday</a>
-        <a href="">Friday</a>
-        <a href="">Saturday</a>
-        <a href="">Sunday</a>
-    </nav>
+
+<h1>Weekly overview</h1>
+{% block content %} 
+
     <form method="post" action = "/add">
         <input type="text" name="total_income">
         <button type="submit">Enter data</button>
@@ -27,7 +17,21 @@
 {% for income in overview_list %}
     {{ income.db_total_income }}
 {% endfor %}
-    </hr>
 
+<section id="total-income">
+</section>
+<section id="highest-spend">
+</section>
+<section id="best-selling-item">
+</section>
+<section id="least-sold-item">
+</section>
+<section id="MVP-staff">
+</section>
+
+<form id="graph">
+</form>
+
+{% endblock %}
 </body>
 </html>

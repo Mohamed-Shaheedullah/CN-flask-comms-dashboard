@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('feature.home') }}">Week overview</a>
+        <a href="{{ url_for('feature.mon') }}">Monday</a>
+        <a href="{{ url_for('feature.tues') }}">Tuesday</a>
+        <a href="{{ url_for('feature.wed') }}">Wednesday</a>
+        <a href="{{ url_for('feature.thurs') }}">Thursday</a>
+        <a href="{{ url_for('feature.fri') }}">Friday</a>
+        <a href="{{ url_for('feature.sat') }}">Saturday</a>
+        <a href="{{ url_for('feature.sun') }}">Sunday</a>
+
+</nav>
+
+{% block content %}
+
+
+
+{% endblock %}
+
+</body>
+</html>
+

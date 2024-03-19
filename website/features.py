@@ -26,9 +26,9 @@ def add():
         er_message = "There was an error adding your task"
         return redirect(url_for("feature.home", er_message=er_message))
     
-@feature.route("/read")
-def read():
-    overview_list = Overview.query.all()    # returns list of objects
-    print(overview_list)
-    er_message = request.args.get("er_message", None)
-    return render_template("home.html", overview_list = overview_list, er_message=er_message)
+# @feature.route("/read")
+# def read():
+#     overview_list = Overview.query.all()    # returns list of objects
+#     print(overview_list)
+#     er_message = request.args.get("er_message", None)
+#     return render_template("home.html", overview_list = overview_list, er_message=er_message)

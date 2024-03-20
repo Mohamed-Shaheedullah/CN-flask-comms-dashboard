@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home.css') }}"> 
+{% endblock %}
 
 <header id="input-data">
 </header>
@@ -55,7 +58,7 @@
 
 
 <form id="graph">
-
+    <img src="{{ url_for('static', filename='my_plot.png') }}">
 
 </form>
 

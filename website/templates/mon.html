@@ -1,27 +1,35 @@
-{% extends 'base.html' %}
-
-
-<head>    <title>Document</title></head>
-
-<body>
-    {% block content %} 
+{% extends "base.html" %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='days.css') }}"> 
+{% endblock %}
+{% block content %} <div class="monday">
+    <header>
         <h1>Monday overview</h1>
+    </header>
 
-
-    <form>
+    <div class="whole">
+        <div class="lsec">
         <section id="MVP">
+            thing
         </section>
         <section id="best-selling-item">
+            thing
         </section>
         <section id="least-sold-item">
+            thing
         </section>
         <section id="profit">
+            thing
         </section>
-    </form>
-
-    <aside>
+    </div>
+    
+   <div class="graph">
+        <aside >
         <img src="" alt="chart">
     </aside>
-{% endblock %}
-</body>
-</html>
+        </div>
+    </div>
+</div>
+   
+    
+    </div>{% endblock %}

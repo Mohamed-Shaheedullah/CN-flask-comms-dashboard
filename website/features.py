@@ -1,15 +1,26 @@
 from flask import Flask, Blueprint, redirect, render_template, url_for, request
 from .models import Overview
 from . import db
+import pandas as pd
 
 feature = Blueprint("feature", __name__)
 
 @feature.route("/")
 def home():
     overview_list = Overview.query.all()    # returns list of objects
+    df = pd.DataFrame([(
+        i.id,
+        i.db_total_income
+    )for i in overview_list],columns=["id","total_income"])
     # print(overview_list)
     er_message = request.args.get("er_message", None)
-    return render_template("home.html", overview_list = overview_list, er_message=er_message)
+    max_income_week = Overview.query.filter(Overview.db_total_income)
+    # df = pd.read_sql(Overview.query.all())
+    print(df)
+    # print(max_income_week)
+    return render_template("home.html", overview_list = overview_list,
+                            max_income_week=max_income_week,
+                            er_message=er_message)
 
 
 @feature.route("/add", methods = ["POST", "GET"])

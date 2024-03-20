@@ -18,13 +18,17 @@ def add():
         # request form contents by 'name' of form - task
         db_total_income = request.form.get("total_income")
         db_highest_spend = request.form.get("highest_spend")
-    
         db_bestseller = request.form.get("best_selling_item")
-
+        db_worstseller = request.form.get("least_selling_item")
+        db_mvp = request.form.get("MVP_staff")
 
         # left task represents var declared in above line , right task represents contents of form ?
         new_overview = Overview(db_total_income = db_total_income,
-                                db_highest_spend=db_highest_spend)
+                                db_highest_spend=db_highest_spend,
+                                db_bestseller= db_bestseller,
+                                db_worstseller=db_worstseller,
+                                db_mvp=db_mvp
+                                )
         db.session.add(new_overview)
         db.session.commit()
         return redirect(url_for("feature.home"))

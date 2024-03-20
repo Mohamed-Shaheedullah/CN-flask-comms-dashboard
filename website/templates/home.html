@@ -8,21 +8,21 @@
 <h1>Weekly overview</h1>
 {% block content %} 
 
-    <form method="post" action = "/add">
+    <!-- <form method="post" action = "/add">
         <input type="text" name="total_income">
         <button type="submit">Enter data</button>
 
-    </form>
+    </form> -->
 <hr>
+
 {% for income in overview_list %}
     {{ income.db_total_income }}
 {% endfor %}
 
-<form method="post" action = "/add>
+<form method="post" action = "/add">
 
-<section id="total-income">
-    <input type="text" name="total_income">
-</section>
+<input type="text" name="total_income">
+
 
 <section id="highest-spend">
     <input type="text" name="highest_spend">
@@ -39,9 +39,14 @@
 <section id="MVP-staff">
     <input type="text" name="MVP_staff">
 </section>
-<form id="graph">
 
 <button type="submit">Enter data</button>
+
+</form>
+
+<form id="graph">
+
+
 </form>
 
 {% endblock %}

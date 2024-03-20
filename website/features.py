@@ -25,8 +25,20 @@ def home():
     # print(overview_list)
     er_message = request.args.get("er_message", None)
     # df = pd.read_sql(Overview.query.all())
-    print(df)
-    return render_template("home.html", overview_list = overview_list, er_message=er_message)
+    max_total_income = df['total_income'].max()
+    max_highest_spend = df["highest_spend"].max()
+    mode_bestseller = df["best_seller"].mode()[0]
+    mode_worst_seller = df["worst_seller"].mode()[0]
+    mode_mvp_staff = df["mvp_staff"].mode()[0]
+    # print(max_total_income)
+    return render_template("home.html",
+                            max_total_income=max_total_income,
+                            max_highest_spend=max_highest_spend,
+                            mode_bestseller=mode_bestseller,
+                            mode_worst_seller=mode_worst_seller,
+                            mode_mvp_staff=mode_mvp_staff,
+                            # overview_list = overview_list,
+                            er_message=er_message)
 
 
 @feature.route("/add", methods = ["POST", "GET"])
@@ -53,12 +65,6 @@ def add():
         er_message = "There was an error adding your task"
         return redirect(url_for("feature.home", er_message=er_message))
     
-# @feature.route("/read")
-# def read():
-#     overview_list = Overview.query.all()    # returns list of objects
-#     print(overview_list)
-#     er_message = request.args.get("er_message", None)
-#     return render_template("home.html", overview_list = overview_list, er_message=er_message)
     
 @feature.route("/mon")
 def mon():

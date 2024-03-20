@@ -10,17 +10,23 @@ def home():
     overview_list = Overview.query.all()    # returns list of objects
     df = pd.DataFrame([(
         i.id,
-        i.db_total_income
-    )for i in overview_list],columns=["id","total_income"])
+        i.db_total_income,
+        i.db_highest_spend,
+        i.db_bestseller,
+        i.db_worstseller,
+        i.db_mvp
+
+    )for i in overview_list],columns=["id",
+                                    "total_income",
+                                    "highest_spend",
+                                    "best_seller",
+                                    "worst_seller",
+                                    "mvp_staff"  ])
     # print(overview_list)
     er_message = request.args.get("er_message", None)
-    max_income_week = Overview.query.filter(Overview.db_total_income)
     # df = pd.read_sql(Overview.query.all())
     print(df)
-    # print(max_income_week)
-    return render_template("home.html", overview_list = overview_list,
-                            max_income_week=max_income_week,
-                            er_message=er_message)
+    return render_template("home.html", overview_list = overview_list, er_message=er_message)
 
 
 @feature.route("/add", methods = ["POST", "GET"])

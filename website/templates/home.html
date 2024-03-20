@@ -15,9 +15,7 @@
     </form> -->
 <hr>
 
-{% for income in overview_list %}
-    {{ income.db_total_income }}
-{% endfor %}
+
 
 <form method="post" action = "/add">
 
@@ -43,6 +41,11 @@
 <button type="submit">Enter data</button>
 
 </form>
+
+{% for income in overview_list %}
+    {{ income.db_total_income }}
+{% endfor %}
+
 
 <form id="graph">
 

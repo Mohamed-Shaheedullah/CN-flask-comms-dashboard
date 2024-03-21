@@ -47,7 +47,7 @@ def home():
     plt.title("Total Income by Day")
     plt.xlabel("day")
     plt.ylabel("Total Income")
-    plt.savefig('./website/static/my_plot.png')
+    plt.savefig('./website/static/images/my_plot.png')
     return render_template("home.html",
                             max_total_income=max_total_income,
                             max_highest_spend=max_highest_spend,

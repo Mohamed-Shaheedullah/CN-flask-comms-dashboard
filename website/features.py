@@ -28,21 +28,24 @@ def base_to_frame(db_query):
 @feature.route("/")
 def home():
     overview_list = Overview.query.all()    # returns list of objects
-    if len(overview_list) > 0:
-        df = pd.DataFrame([(
-            i.id,
-            i.db_total_income,
-            i.db_highest_spend,
-            i.db_bestseller,
-            i.db_worstseller,
-            i.db_mvp
+    overview = Overview.query.all()
+    df = base_to_frame(overview)
 
-        )for i in overview_list],columns=["id",
-                                        "total_income",
-                                        "highest_spend",
-                                        "best_seller",
-                                        "worst_seller",
-                                        "mvp_staff"  ])
+    # if len(overview_list) > 0:
+    #     df = pd.DataFrame([(
+    #         i.id,
+    #         i.db_total_income,
+    #         i.db_highest_spend,
+    #         i.db_bestseller,
+    #         i.db_worstseller,
+    #         i.db_mvp
+
+    #     )for i in overview_list],columns=["id",
+    #                                     "total_income",
+    #                                     "highest_spend",
+    #                                     "best_seller",
+    #                                     "worst_seller",
+    #                                     "mvp_staff"  ])
     # print(overview_list)
     er_message = request.args.get("er_message", None)
     # df = pd.read_sql(Overview.query.all())
@@ -97,9 +100,23 @@ def mon():
     # mon_income = df["total_income"][0]
     overview = Overview.query.all()
     df = base_to_frame(overview)
+    income = df["total_income"][1]
+    highest_spend = df["highest_spend"][1]
+    best_seller = df["best_seller"][1]
+    worst_seller = df["worst_seller"][1]
+    mvp = df["mvp_staff"][1]
     # print(df)
-    # print(mon_income)
-    return render_template("mon.html")
+    # print(income)
+    return render_template("mon.html",
+                            income=income,
+                            highest_spend=highest_spend,
+                            best_seller=best_seller,
+                            worst_seller=worst_seller,
+                            mvp=mvp)
+                            
+                            # best_seller=best_seller,
+                            # worst_seller=worst_seller)
+                            # mvp=mvp)
 
 @feature.route("/tues")
 def tues():

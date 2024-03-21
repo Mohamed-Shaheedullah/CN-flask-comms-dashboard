@@ -6,6 +6,24 @@ import matplotlib.pyplot as plt
 
 feature = Blueprint("feature", __name__)
 
+def base_to_frame(db_query):
+    if len(db_query) > 0:
+        df = pd.DataFrame([(
+            i.id,
+            i.db_total_income,
+            i.db_highest_spend,
+            i.db_bestseller,
+            i.db_worstseller,
+            i.db_mvp
+
+        )for i in db_query],columns=["id",
+                                        "total_income",
+                                        "highest_spend",
+                                        "best_seller",
+                                        "worst_seller",
+                                        "mvp_staff"  ])
+        return df
+
 
 @feature.route("/")
 def home():
@@ -77,7 +95,9 @@ def add():
 @feature.route("/mon")
 def mon():
     # mon_income = df["total_income"][0]
-    # overview = Overview.query.all()
+    overview = Overview.query.all()
+    df = base_to_frame(overview)
+    # print(df)
     # print(mon_income)
     return render_template("mon.html")
 

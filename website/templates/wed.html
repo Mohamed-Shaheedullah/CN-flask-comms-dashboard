@@ -9,31 +9,34 @@
 
     <div class="whole">
         <div class="lsec">
-        <section id="MVP">
-            thing
-        </section>
-        <section id="best-selling-item">
-            thing
-        </section>
-        <section id="least-sold-item">
-            thing
-        </section>
-        <section id="profit">
-            thing
-        </section>
-    </div>
-    {{income}}
-    {{highest_spend}}
-    {{best_seller}}
-    {{worst_seller}}
-    {{mvp}}
-   <div class="graph">
-        <aside >
-        <img src="" alt="chart">
-    </aside>
+           <section id="MVP">
+              <p>MVP
+                 {{mvp}}
+              </p>
+           </section>
+           <section id="best-selling-item">
+              <p>Best seller {{best_seller}} </p>
+           </section>
+           <section id="least-sold-item">
+              <p>Worst seller  {{worst_seller}}</p>
+           </section>
+           <section id="highest-spend">
+              <p> Highest Spend
+                 {{highest_spend}}
+              </p>
+           </section>
+           <section id="profit">
+              <p>Profit
+                 {{income}}
+              </p>
+           </section>
         </div>
-    </div>
-</div>
-   
-    
-    </div>{% endblock %}
+        <div class="graph">
+           <aside >
+              <img src="{{ url_for('static', filename='images/payment pie wednesday.png') }}">
+              <img src="{{ url_for('static', filename='images/bar_wednesday.png') }}"> 
+           </aside>
+        </div>
+     </div>
+  </div>
+  </div>{% endblock %}

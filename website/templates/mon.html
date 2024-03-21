@@ -1,47 +1,42 @@
 {% extends "base.html" %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='days.css') }}"> 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='days.css') }}">
 {% endblock %}
-{% block content %} <div class="monday">
-    <header>
-        <h1>Monday overview</h1>
-    </header>
-
-    <div class="whole">
-        <div class="lsec">
-        <section id="MVP">
+{% block content %} 
+<div class="monday">
+   <header>
+      <h1>Monday overview</h1>
+   </header>
+   <div class="whole">
+      <div class="lsec">
+         <section id="MVP">
             <p>MVP
-            {{mvp}}</p>
-        </section>
-        <section id="best-selling-item">
-          <p>Best seller {{best_seller}} </p>
-        </section>
-        <section id="least-sold-item">
-        <p>Worst seller  {{worst_seller}}</p>
-        </section>
-        <section id="highest-spend">
-           <p> Highest Spend
-            {{highest_spend}}</p>
-        </section>
-        <section id="profit">
+               {{mvp}}
+            </p>
+         </section>
+         <section id="best-selling-item">
+            <p>Best seller {{best_seller}} </p>
+         </section>
+         <section id="least-sold-item">
+            <p>Worst seller  {{worst_seller}}</p>
+         </section>
+         <section id="highest-spend">
+            <p> Highest Spend
+               {{highest_spend}}
+            </p>
+         </section>
+         <section id="profit">
             <p>Profit
-            {{income}}</p>
-        </section>
-    </div>
-    
-    
-    
-   
-    
-
-   <div class="graph">
-        <aside >
+               {{income}}
+            </p>
+         </section>
+      </div>
+      <div class="graph">
+         <aside >
             <img src="{{ url_for('static', filename='images/payment_pie_monday.png') }}">
             <img src="{{ url_for('static', filename='images/bar_monday 1.png') }}"> 
-    </aside>
-        </div>
-    </div>
+         </aside>
+      </div>
+   </div>
 </div>
-   
-    
-    </div>{% endblock %}
+</div>{% endblock %}

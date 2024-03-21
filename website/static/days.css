@@ -64,8 +64,9 @@ h1 {
 }
 
 .lsec {
+    font-size: xx-large;
     background-color: gainsboro;
-    display: flex;
+    /* display: flex; */
     justify-content: space-evenly;
     margin-bottom: 1%;
     margin: 1%;

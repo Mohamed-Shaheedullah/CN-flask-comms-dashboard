@@ -10,19 +10,22 @@
     <div class="whole">
         <div class="lsec">
         <section id="MVP">
-            {{mvp}}
+            <p>MVP
+            {{mvp}}</p>
         </section>
         <section id="best-selling-item">
-            {{best_seller}}
+          <p>Best seller {{best_seller}} </p>
         </section>
         <section id="least-sold-item">
-            {{worst_seller}}
+        <p>Worst seller  {{worst_seller}}</p>
         </section>
         <section id="highest-spend">
-            {{highest_spend}}
+           <p> Highest Spend
+            {{highest_spend}}</p>
         </section>
         <section id="profit">
-            {{income}}
+            <p>Profit
+            {{income}}</p>
         </section>
     </div>
     
@@ -33,7 +36,8 @@
 
    <div class="graph">
         <aside >
-        <img src="" alt="chart">
+            <img src="{{ url_for('static', filename='images/payment_pie_monday.png') }}">
+            <img src="{{ url_for('static', filename='images/bar_monday 1.png') }}"> 
     </aside>
         </div>
     </div>

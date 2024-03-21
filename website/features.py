@@ -2,6 +2,8 @@ from flask import Flask, Blueprint, redirect, render_template, url_for, request
 from .models import Overview
 from . import db
 import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 feature = Blueprint("feature", __name__)
@@ -30,23 +32,6 @@ def home():
     overview_list = Overview.query.all()    # returns list of objects
     overview = Overview.query.all()
     df = base_to_frame(overview)
-
-    # if len(overview_list) > 0:
-    #     df = pd.DataFrame([(
-    #         i.id,
-    #         i.db_total_income,
-    #         i.db_highest_spend,
-    #         i.db_bestseller,
-    #         i.db_worstseller,
-    #         i.db_mvp
-
-    #     )for i in overview_list],columns=["id",
-    #                                     "total_income",
-    #                                     "highest_spend",
-    #                                     "best_seller",
-    #                                     "worst_seller",
-    #                                     "mvp_staff"  ])
-    # print(overview_list)
     er_message = request.args.get("er_message", None)
     # df = pd.read_sql(Overview.query.all())
     max_total_income = df['total_income'].max()
@@ -54,14 +39,15 @@ def home():
     mode_bestseller = df["best_seller"].mode()[0]
     mode_worst_seller = df["worst_seller"].mode()[0]
     mode_mvp_staff = df["mvp_staff"].mode()[0]
-    # s = df["total_income"]
-    # x = df["id"]
-    # plt.scatter(x, s)
-    # plt.title("Total Income by Day")
-    # plt.xlabel("day")
-    # plt.ylabel("Total Income")
-    # # plt.show() IS THERE A BETTER WAY OF DOING THIS 
-    # plt.savefig('./website/static/my_plot.png')
+    s = df["total_income"]
+    x = df["id"]
+    plt.style.use('ggplot')
+    plt.figure(figsize=(6,4)) 
+    plt.scatter(x, s)
+    plt.title("Total Income by Day")
+    plt.xlabel("day")
+    plt.ylabel("Total Income")
+    plt.savefig('./website/static/my_plot.png')
     return render_template("home.html",
                             max_total_income=max_total_income,
                             max_highest_spend=max_highest_spend,

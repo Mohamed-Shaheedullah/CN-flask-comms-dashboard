@@ -34,7 +34,7 @@ def home():
     df = base_to_frame(overview)
     er_message = request.args.get("er_message", None)
     # df = pd.read_sql(Overview.query.all())
-    max_total_income = df['total_income'].max()
+    max_total_income = df['total_income'].sum()
     max_highest_spend = df["highest_spend"].max()
     mode_bestseller = df["best_seller"].mode()[0]
     mode_worst_seller = df["worst_seller"].mode()[0]

@@ -120,36 +120,111 @@ def mon():
 
 @feature.route("/tues")
 def tues():
-    # overview = Overview.query.all()
-    # print(overview)
-    return render_template("tues.html")
+    overview = Overview.query.all()
+    df = base_to_frame(overview)
+    income = df["total_income"][2]
+    highest_spend = df["highest_spend"][2]
+    best_seller = df["best_seller"][2]
+    worst_seller = df["worst_seller"][2]
+    mvp = df["mvp_staff"][2]
+    # print(df)
+    # print(income)
+    return render_template("tues.html",
+                            income=income,
+                            highest_spend=highest_spend,
+                            best_seller=best_seller,
+                            worst_seller=worst_seller,
+                            mvp=mvp)
+                            
 
 @feature.route("/wed")
 def wed():
-    # overview = Overview.query.all()
-    # print(overview)
-    return render_template("wed.html")
+    overview = Overview.query.all()
+    df = base_to_frame(overview)
+    income = df["total_income"][3]
+    highest_spend = df["highest_spend"][3]
+    best_seller = df["best_seller"][3]
+    worst_seller = df["worst_seller"][3]
+    mvp = df["mvp_staff"][3]
+    # print(df)
+    # print(income)
+    return render_template("wed.html",
+                            income=income,
+                            highest_spend=highest_spend,
+                            best_seller=best_seller,
+                            worst_seller=worst_seller,
+                            mvp=mvp)
+
 
 @feature.route("/thurs")
 def thurs():
-    # overview = Overview.query.all()
-    # print(overview)
-    return render_template("thurs.html")
+    overview = Overview.query.all()
+    df = base_to_frame(overview)
+    income = df["total_income"][4]
+    highest_spend = df["highest_spend"][4]
+    best_seller = df["best_seller"][4]
+    worst_seller = df["worst_seller"][4]
+    mvp = df["mvp_staff"][4]
+    # print(df)
+    # print(income)
+    return render_template("thurs.html",
+                            income=income,
+                            highest_spend=highest_spend,
+                            best_seller=best_seller,
+                            worst_seller=worst_seller,
+                            mvp=mvp)
 
 @feature.route("/fri")
 def fri():
-    # overview = Overview.query.all()
-    # print(overview)
-    return render_template("fri.html")
+    overview = Overview.query.all()
+    df = base_to_frame(overview)
+    income = df["total_income"][5]
+    highest_spend = df["highest_spend"][5]
+    best_seller = df["best_seller"][5]
+    worst_seller = df["worst_seller"][5]
+    mvp = df["mvp_staff"][5]
+    # print(df)
+    # print(income)
+    return render_template("fri.html",
+                            income=income,
+                            highest_spend=highest_spend,
+                            best_seller=best_seller,
+                            worst_seller=worst_seller,
+                            mvp=mvp)
+
 
 @feature.route("/sat")
 def sat():
-    # overview = Overview.query.all()
-    # print(overview)
-    return render_template("sat.html")
+    overview = Overview.query.all()
+    df = base_to_frame(overview)
+    income = df["total_income"][6]
+    highest_spend = df["highest_spend"][6]
+    best_seller = df["best_seller"][6]
+    worst_seller = df["worst_seller"][6]
+    mvp = df["mvp_staff"][6]
+    # print(df)
+    # print(income)
+    return render_template("sat.html",
+                            income=income,
+                            highest_spend=highest_spend,
+                            best_seller=best_seller,
+                            worst_seller=worst_seller,
+                            mvp=mvp)
 
 @feature.route("/sun")
 def sun():
-    # overview = Overview.query.all()
-    # print(overview)
-    return render_template("sun.html")
+    overview = Overview.query.all()
+    df = base_to_frame(overview)
+    income = df["total_income"][7]
+    highest_spend = df["highest_spend"][7]
+    best_seller = df["best_seller"][7]
+    worst_seller = df["worst_seller"][7]
+    mvp = df["mvp_staff"][7]
+    # print(df)
+    # print(income)
+    return render_template("sun.html",
+                            income=income,
+                            highest_spend=highest_spend,
+                            best_seller=best_seller,
+                            worst_seller=worst_seller,
+                            mvp=mvp)

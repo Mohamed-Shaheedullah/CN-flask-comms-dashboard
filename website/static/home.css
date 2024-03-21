@@ -128,3 +128,23 @@ form {
 }
 
 
+.results {
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+    width: 90%;
+    padding: 5%;
+    border: 5px rgb(89, 87, 87) solid;   
+}
+
+
+.week {
+    font-size: xx-large;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+    width: 60%;
+    padding: 5%;
+    border: 5px rgb(89, 87, 87) solid;
+}

@@ -65,12 +65,37 @@
     more input
 </div>
 
+<div class="results">
+    <section class="week">
+<p>  Total Income
+{{max_total_income}} </p>
+</section>
+<section class="week">
+<p>Highest Spend  
+{{max_highest_spend}} </p>
 
-{{max_total_income}},
-    {{max_highest_spend}},
-    {{mode_bestseller}},
-    {{mode_worst_seller}}r,
+</section>
+
+<section class = "week">
+<p>Best seller
+    {{mode_bestseller}}
+</p>
+</section>
+
+    <section class = "week">
+    <p>Worst seller
+    {{mode_worst_seller}}
+</p>
+</section>
+
+<section class = "week">
+    <p>MVP Staff
     {{mode_mvp_staff}}
+</p>
+</section>
+</div>
+
+
 
 <div class="graph">
     <!-- <img src="{{ url_for('static', filename='my_plot.png') }}"> -->

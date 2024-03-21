@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home.css') }}"> 
+{% endblock %}
+
+<header id="input-data">
+</header>
+
+<body>
+
+<h1>Weekly overview</h1>
+{% block content %} 
+
+    <!-- <form method="post" action = "/add">
+        <input type="text" name="total_income">
+        <button type="submit">Enter data</button>
+
+    </form> -->
+<hr>
+
+
+
+<form method="post" action = "/add">
+
+<input type="text" name="total_income">
+
+
+<section id="highest-spend">
+    <input type="text" name="highest_spend">
+</section>
+
+<section id="best-selling-item">
+    <input type="text" name="best_selling_item">
+</section>
+
+<section id="least-sold-item">
+    <input type="text" name="least_selling_item">
+</section>
+
+<section id="MVP-staff">
+    <input type="text" name="MVP_staff">
+</section>
+
+<button type="submit">Enter data</button>
+
+</form>
+
+<!-- {% for income in overview_list %}
+    {{ income.db_total_income }}
+{% endfor %}
+{{max_income_week}} -->
+
+{{max_total_income}},
+    {{max_highest_spend}},
+    {{mode_bestseller}},
+    {{mode_worst_seller}}r,
+    {{mode_mvp_staff}}
+
+
+<form id="graph">
+    <img src="{{ url_for('static', filename='my_plot.png') }}">
+
+</form>
+
+{% endblock %}
+</body>
+</html>

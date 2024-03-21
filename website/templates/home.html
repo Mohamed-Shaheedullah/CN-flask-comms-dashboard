@@ -2,7 +2,6 @@
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home.css') }}"> 
 {% endblock %}
-
 <header id="input-data">
 </header>
 
@@ -10,45 +9,62 @@
 
 <h1>Weekly overview</h1>
 {% block content %} 
-
-    <!-- <form method="post" action = "/add">
+<!-- 
+    <form method="post" action = "/add">
         <input type="text" name="total_income">
         <button type="submit">Enter data</button>
 
     </form> -->
 <hr>
+<!-- {% for income in overview_list %}
+    {{ income.db_total_income }}
+{% endfor %} -->
+<div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+    <form method="post" action = "/add">
+    <div class="box1">
+        <section id="total-income">
+            <input type="text" placeholder="Total income" name="total_income">
+        </section>
 
+        <section id="highest-spend">
+            <input type="text" placeholder="Highest spend" name="highest_spend">
+        </section>
+    </div>
+    <div class="box2">
+        <section id="best-selling-item">
+            <input type="text" placeholder="Best selling item" name="best_selling_item">
+        </section>
 
+        <section id="least-sold-item">
+            <input type="text" placeholder="Least sold item" name="least_selling_item">
+        </section>
+    </div>
 
-<form method="post" action = "/add">
-
-<input type="text" name="total_income">
-
-
-<section id="highest-spend">
-    <input type="text" name="highest_spend">
-</section>
-
-<section id="best-selling-item">
-    <input type="text" name="best_selling_item">
-</section>
-
-<section id="least-sold-item">
-    <input type="text" name="least_selling_item">
-</section>
-
-<section id="MVP-staff">
-    <input type="text" name="MVP_staff">
-</section>
-
-<button type="submit">Enter data</button>
+    <div class="box3">
+        <section id="MVP-staff">
+            <input type="text" placeholder="MVP staff" name="MVP_staff">
+        </section>
+        
+    </div>
+    <div class="enter">
+        <input type="submit">
+        </div>
+    </div>
+</div>
 
 </form>
 
-<!-- {% for income in overview_list %}
-    {{ income.db_total_income }}
-{% endfor %}
-{{max_income_week}} -->
+
+
+<div class="id">
+    for input 
+</div>
+<div class="id1">
+    more input
+</div>
+
 
 {{max_total_income}},
     {{max_highest_spend}},
@@ -56,11 +72,11 @@
     {{mode_worst_seller}}r,
     {{mode_mvp_staff}}
 
-
-<form id="graph">
+<div class="graph">
     <img src="{{ url_for('static', filename='my_plot.png') }}">
+</div>
 
-</form>
+
 
 {% endblock %}
 </body>

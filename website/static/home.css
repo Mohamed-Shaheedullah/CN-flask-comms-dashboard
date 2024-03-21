@@ -1,7 +1,9 @@
-
-
 body {
     background-color:steelblue;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 nav {
@@ -12,18 +14,117 @@ nav {
     text-decoration:dashed;
 }
 
+nav a {
+    color:black;
+    font-family: monospace;
+    font-size: xx-large;
+}
+
 nav :hover{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: chocolate;
+    color:blue;
 }
 
 h1 {
     display: flex;
-    text-align:left;
+    text-align:center;
 }
 h2 {
     display: flex;
     text-align: right;
 }
+
+.monday {
+    background-color: aqua;
+}
+
+.dropbtn {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.enter {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+}
+
+.box1, .box2, .box3 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+    width: 90%;
+    padding: 5%;
+    border: 5px rgb(89, 87, 87) solid;
+}
+
+.id {
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+    width: 90%;
+    padding: 5%;
+    border: 5px rgb(89, 87, 87) solid;
+}
+
+.id1 {
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+    width: 90%;
+    padding: 5%;
+    border: 5px rgb(89, 87, 87) solid;
+}
+
+.graph {
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+    width: 90%;
+    padding: 5%;
+    border: 5px rgb(89, 87, 87) solid;
+}
+
+

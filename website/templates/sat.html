@@ -2,28 +2,38 @@
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='days.css') }}"> 
 {% endblock %}
-{% block content %}
+{% block content %} <div class="monday">
     <header>
-        <h1>staurday overview</h1>
+        <h1>Saturday overview</h1>
     </header>
+
+    <div class="whole">
+        <div class="lsec">
+        <section id="MVP">
+            thing
+        </section>
+        <section id="best-selling-item">
+            thing
+        </section>
+        <section id="least-sold-item">
+            thing
+        </section>
+        <section id="profit">
+            thing
+        </section>
+    </div>
     {{income}}
     {{highest_spend}}
     {{best_seller}}
     {{worst_seller}}
     {{mvp}}
-    <form>
-        <section id="MVP">
-        </section>
-        <section id="best-selling-item">
-        </section>
-        <section id="least-sold-item">
-        </section>
-        <section id="profit">
-        </section>
-    </form>
-
-    <aside>
+   <div class="graph">
+        <aside >
         <img src="" alt="chart">
     </aside>
+        </div>
+    </div>
+</div>
+   
     
-    {% endblock %}
+    </div>{% endblock %}

@@ -88,21 +88,25 @@ def add():
 def mon():
     # mon_income = df["total_income"][0]
     overview = Overview.query.all()
-    df = base_to_frame(overview)
-    income = df["total_income"][0]
-    highest_spend = df["highest_spend"][0]
-    best_seller = df["best_seller"][0]
-    worst_seller = df["worst_seller"][0]
-    mvp = df["mvp_staff"][0]
-    # print(df)
-    # print(income)
-    return render_template("mon.html",
-                            income=income,
-                            highest_spend=highest_spend,
-                            best_seller=best_seller,
-                            worst_seller=worst_seller,
-                            mvp=mvp)
-                            
+    exists = Overview.query.filter_by(id=1).first() is not None
+    if exists:
+        df = base_to_frame(overview)
+        income = df["total_income"][0]
+        highest_spend = df["highest_spend"][0]
+        best_seller = df["best_seller"][0]
+        worst_seller = df["worst_seller"][0]
+        mvp = df["mvp_staff"][0]
+        # print(df)
+        # print(income)
+        return render_template("mon.html",
+                                income=income,
+                                highest_spend=highest_spend,
+                                best_seller=best_seller,
+                                worst_seller=worst_seller,
+                                mvp=mvp)
+    else:
+        return render_template("mon.html")
+                                
                             # best_seller=best_seller,
                             # worst_seller=worst_seller)
                             # mvp=mvp)
@@ -110,7 +114,8 @@ def mon():
 @feature.route("/tues")
 def tues():
     overview = Overview.query.all()
-    if overview:
+    exists = Overview.query.filter_by(id=2).first() is not None
+    if exists:
         df = base_to_frame(overview)
         income = df["total_income"][1]
         highest_spend = df["highest_spend"][1]
@@ -132,91 +137,111 @@ def tues():
 @feature.route("/wed")
 def wed():
     overview = Overview.query.all()
-    df = base_to_frame(overview)
-    income = df["total_income"][2]
-    highest_spend = df["highest_spend"][2]
-    best_seller = df["best_seller"][2]
-    worst_seller = df["worst_seller"][2]
-    mvp = df["mvp_staff"][2]
-    # print(df)
-    # print(income)
-    return render_template("wed.html",
-                            income=income,
-                            highest_spend=highest_spend,
-                            best_seller=best_seller,
-                            worst_seller=worst_seller,
-                            mvp=mvp)
-
+    exists = Overview.query.filter_by(id=3).first() is not None
+    if exists:
+        df = base_to_frame(overview)
+        income = df["total_income"][2]
+        highest_spend = df["highest_spend"][2]
+        best_seller = df["best_seller"][2]
+        worst_seller = df["worst_seller"][2]
+        mvp = df["mvp_staff"][2]
+        # print(df)
+        # print(income)
+        return render_template("wed.html",
+                                income=income,
+                                highest_spend=highest_spend,
+                                best_seller=best_seller,
+                                worst_seller=worst_seller,
+                                mvp=mvp)
+    else:
+        return render_template("wed.html")
 
 @feature.route("/thurs")
 def thurs():
     overview = Overview.query.all()
-    df = base_to_frame(overview)
-    income = df["total_income"][3]
-    highest_spend = df["highest_spend"][3]
-    best_seller = df["best_seller"][3]
-    worst_seller = df["worst_seller"][3]
-    mvp = df["mvp_staff"][3]
-    # print(df)
-    # print(income)
-    return render_template("thurs.html",
-                            income=income,
-                            highest_spend=highest_spend,
-                            best_seller=best_seller,
-                            worst_seller=worst_seller,
-                            mvp=mvp)
+    exists = Overview.query.filter_by(id=4).first() is not None
+    if exists:
+        df = base_to_frame(overview)
+        income = df["total_income"][3]
+        highest_spend = df["highest_spend"][3]
+        best_seller = df["best_seller"][3]
+        worst_seller = df["worst_seller"][3]
+        mvp = df["mvp_staff"][3]
+        # print(df)
+        # print(income)
+        return render_template("thurs.html",
+                                income=income,
+                                highest_spend=highest_spend,
+                                best_seller=best_seller,
+                                worst_seller=worst_seller,
+                                mvp=mvp)
+    else:
+        return render_template("thurs.html")
+
 
 @feature.route("/fri")
 def fri():
     overview = Overview.query.all()
-    df = base_to_frame(overview)
-    income = df["total_income"][4]
-    highest_spend = df["highest_spend"][4]
-    best_seller = df["best_seller"][4]
-    worst_seller = df["worst_seller"][4]
-    mvp = df["mvp_staff"][4]
-    # print(df)
-    # print(income)
-    return render_template("fri.html",
-                            income=income,
-                            highest_spend=highest_spend,
-                            best_seller=best_seller,
-                            worst_seller=worst_seller,
-                            mvp=mvp)
+    exists = Overview.query.filter_by(id=5).first() is not None
+    if exists:
+        df = base_to_frame(overview)
+        income = df["total_income"][4]
+        highest_spend = df["highest_spend"][4]
+        best_seller = df["best_seller"][4]
+        worst_seller = df["worst_seller"][4]
+        mvp = df["mvp_staff"][4]
+        # print(df)
+        # print(income)
+        return render_template("fri.html",
+                                income=income,
+                                highest_spend=highest_spend,
+                                best_seller=best_seller,
+                                worst_seller=worst_seller,
+                                mvp=mvp)
+    else:
+        return render_template("fri.html")
 
 
 @feature.route("/sat")
 def sat():
     overview = Overview.query.all()
-    df = base_to_frame(overview)
-    income = df["total_income"][5]
-    highest_spend = df["highest_spend"][5]
-    best_seller = df["best_seller"][5]
-    worst_seller = df["worst_seller"][5]
-    mvp = df["mvp_staff"][5]
-    # print(df)
-    # print(income)
-    return render_template("sat.html",
-                            income=income,
-                            highest_spend=highest_spend,
-                            best_seller=best_seller,
-                            worst_seller=worst_seller,
-                            mvp=mvp)
+    exists = Overview.query.filter_by(id=6).first() is not None
+    if exists:
+        df = base_to_frame(overview)
+        income = df["total_income"][5]
+        highest_spend = df["highest_spend"][5]
+        best_seller = df["best_seller"][5]
+        worst_seller = df["worst_seller"][5]
+        mvp = df["mvp_staff"][5]
+        # print(df)
+        # print(income)
+        return render_template("sat.html",
+                                income=income,
+                                highest_spend=highest_spend,
+                                best_seller=best_seller,
+                                worst_seller=worst_seller,
+                                mvp=mvp)
+    else:
+        return render_template("sat.html")
 
 @feature.route("/sun")
 def sun():
     overview = Overview.query.all()
-    df = base_to_frame(overview)
-    income = df["total_income"][6]
-    highest_spend = df["highest_spend"][6]
-    best_seller = df["best_seller"][6]
-    worst_seller = df["worst_seller"][6]
-    mvp = df["mvp_staff"][6]
-    # print(df)
-    # print(income)
-    return render_template("sun.html",
-                            income=income,
-                            highest_spend=highest_spend,
-                            best_seller=best_seller,
-                            worst_seller=worst_seller,
-                            mvp=mvp)
+    exists = Overview.query.filter_by(id=7).first() is not None
+    if exists:
+        df = base_to_frame(overview)
+        income = df["total_income"][6]
+        highest_spend = df["highest_spend"][6]
+        best_seller = df["best_seller"][6]
+        worst_seller = df["worst_seller"][6]
+        mvp = df["mvp_staff"][6]
+        # print(df)
+        # print(income)
+        return render_template("sun.html",
+                                income=income,
+                                highest_spend=highest_spend,
+                                best_seller=best_seller,
+                                worst_seller=worst_seller,
+                                mvp=mvp)
+    else:
+        return render_template("sun.html")

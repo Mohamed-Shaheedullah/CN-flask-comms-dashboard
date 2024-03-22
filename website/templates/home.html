@@ -9,47 +9,41 @@
 
 <h1>Weekly overview</h1>
 {% block content %} 
-<!-- 
-    <form method="post" action = "/add">
-        <input type="text" name="total_income">
-        <button type="submit">Enter data</button>
 
-    </form> -->
 <hr>
-<!-- {% for income in overview_list %}
-    {{ income.db_total_income }}
-{% endfor %} -->
+
 <div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-    <div class="dropdown-content">
+    <!-- <button class="dropbtn">Dropdown</button> -->
+    <!-- <div class="dropdown-content"> -->
+        <div class="content"></div>
     <form method="post" action = "/add">
     <div class="box1">
         <section id="total-income">
-            <input type="text" placeholder="Total income" name="total_income">
+            <input type="text" placeholder="Total income" name="total_income" class="big-input">
         </section>
 
         <section id="highest-spend">
-            <input type="text" placeholder="Highest spend" name="highest_spend">
+            <input type="text" placeholder="Highest spend" name="highest_spend" class="big-input">
         </section>
     </div>
     <div class="box2">
         <section id="best-selling-item">
-            <input type="text" placeholder="Best selling item" name="best_selling_item">
+            <input type="text" placeholder="Best selling item" name="best_selling_item" class="big-input">
         </section>
 
         <section id="least-sold-item">
-            <input type="text" placeholder="Least sold item" name="least_selling_item">
+            <input type="text" placeholder="Least sold item" name="least_selling_item" class="big-input">
         </section>
     </div>
 
     <div class="box3">
         <section id="MVP-staff">
-            <input type="text" placeholder="MVP staff" name="MVP_staff">
+            <input type="text" placeholder="MVP staff" name="MVP_staff" class="big-input">
         </section>
         
     </div>
     <div class="enter">
-        <input type="submit">
+        <input type="submit" class="button">
         </div>
     </div>
 </div>
@@ -58,12 +52,12 @@
 
 
 
-<div class="id">
+<!-- <div class="id">
     for input 
 </div>
 <div class="id1">
     more input
-</div>
+</div> -->
 
 <div class="results">
     <section class="week">
